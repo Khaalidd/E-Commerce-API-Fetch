@@ -34,3 +34,9 @@ button:hover{
 h2{
     text-align: center;
 }
+
+#description {
+    resize: none;
+    height: 100px;
+    width: 100%;
+}
