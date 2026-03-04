@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body{
-    font-family: Arial;
+    font-family: "Montserrat", sans-serif;
     background-color: #f4f4f4;
 }
 
@@ -16,19 +18,22 @@ input, textarea{
     width: 100%;
     margin-bottom: 30px;
     padding: 10px;
+    outline: none;
 }
 
 button{
     width: 100%;
     padding: 10px;
-    background: #007bff;
-    color: white;
+    background: #83eebc;
+    color: #1a1a1a;
+    font-weight: 700;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
 }
 
 button:hover{
-    background: #0056b3;
+    background: #83eebc;
 }
 
 h2{
