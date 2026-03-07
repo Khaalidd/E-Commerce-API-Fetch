@@ -49,8 +49,29 @@ body{
     letter-spacing: 0.05em;
 }
 
+.back-button button{
+    max-width: 1440px;
+    margin: 2rem 5rem 0rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.01rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    background: #83eebc;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+}
+.back-button button:hover{
+    transform: scale(1.03);
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 main{
-    padding-top: 55px;
+    padding-top: 35px;
     width: 100%;
     max-width: 1440px;
     text-align: center;
@@ -58,7 +79,7 @@ main{
 }
 .product {
     width: 95%;
-    min-height: 550px;
+    min-height: 450px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -70,17 +91,20 @@ main{
 
 .img-card {
     border-radius: 10px;
-    padding: 6px;
+    padding: 15px;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 700px;
+    max-width: 600px;
     gap: 10px;
 }
 
 #main-img {
     width: 100%;
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -119,11 +143,25 @@ main{
     color: #1a1a1a;
 }
 
+#product-name {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin: 15px 15px 0px;
+}
+
+#price {
+    font-size: 2rem;
+    margin: 0px 15px;
+}
+
 #desc {
     font-weight: bold;
+    font-size: 1.5rem;
+    margin: 15px 15px 0px;
 }
 
 #desc-text {
+    font-size: 1.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
@@ -131,6 +169,7 @@ main{
     overflow: hidden;
     word-break: break-all;
     text-overflow: ellipsis;
+    margin: 0px 15px 0px;
 }
 
 #desc-text.full {
@@ -144,25 +183,27 @@ main{
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
+    margin: 0 15px 15px;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 55px;
 }
 
 .cart, .buy {
     background-color: #83eebc;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
     word-spacing: 2px;
     border: none;
-    padding: 10px 20px;
+    padding: 0.5rem 1.1rem;
     width: 170px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 .cart:hover, .buy:hover {
     transform: scale(1.03);
@@ -229,4 +270,5 @@ main{
 
 .social-links a:hover {
     color: #83eebc;
+
 }
