@@ -17,6 +17,15 @@
         xhr.open("GET", ``);
         xhr.send();
 
+        const mainImg = document.getElementById("main-img");
+        const galleryImgs = document.querySelectorAll(".img-gallery img");
+
+        galleryImgs.forEach(img => {
+            img.addEventListener('click', () => {
+                mainImg.src = img.src;
+            });
+        });
+
         const desc = document.getElementById("desc-text");
         const btn = document.getElementById("more-less");
         
@@ -36,4 +45,5 @@
                 desc.classList.add("full");
             }
         }
+
         btn.addEventListener("click", switchMore);
