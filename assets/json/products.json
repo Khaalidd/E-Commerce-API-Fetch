@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Modern Couch",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "price": 100,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Microphone Stand",
+      "description": "A sturdy and adjustable microphone stand for your studio.",
+      "price": 45,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ergonomic Office Chair",
+      "description": "Supportive office chair designed for long hours of work.",
+      "price": 150,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Wooden Coffee Table",
+      "description": "A beautiful centerpiece coffee table with a rustic finish.",
+      "price": 120,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Wooden Coffee Table",
+      "description": "A beautiful centerpiece coffee table with a rustic finish.",
+      "price": 120,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Wooden Coffee Table",
+      "description": "A beautiful centerpiece coffee table with a rustic finish.",
+      "price": 120,
+      "image": "./assets/images/couch.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Wooden Coffee Table",
+      "description": "A beautiful centerpiece coffee table with a rustic finish.",
+      "price": 120,
+      "image": "./assets/images/couch.jpg"
+    }
+  ]
+}
