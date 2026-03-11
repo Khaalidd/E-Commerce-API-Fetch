@@ -19,8 +19,11 @@ fetch("http://localhost:3000/products")
       card.classList.add("card");
 
       // Set the inner HTML based on the product data properties
+      // Use the first image in the array as the thumbnail
+      const thumbnail = Array.isArray(product.images) ? product.images[0] : product.image;
+
       card.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" />
+          <img src="${thumbnail}" alt="${product.name}" />
           <div class="card-body">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
