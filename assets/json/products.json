@@ -9,9 +9,9 @@
     },
     {
       "id": 2,
-      "name": "Microphone Stand",
-      "description": "A sturdy and adjustable microphone stand for your studio.",
-      "price": 45,
+      "name": "Micophone Stand",
+      "description": "A microphone stand",
+      "price": 30,
       "image": "./assets/images/couch.jpg"
     },
     {
@@ -36,18 +36,11 @@
       "image": "./assets/images/couch.jpg"
     },
     {
-      "id": 6,
-      "name": "Wooden Coffee Table",
-      "description": "A beautiful centerpiece coffee table with a rustic finish.",
-      "price": 120,
-      "image": "./assets/images/couch.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Wooden Coffee Table",
-      "description": "A beautiful centerpiece coffee table with a rustic finish.",
-      "price": 120,
-      "image": "./assets/images/couch.jpg"
+      "name": "Mouse",
+      "price": "15",
+      "image": "https://picsum.photos/200",
+      "description": "gaming mouse",
+      "id": 6
     }
   ]
 }

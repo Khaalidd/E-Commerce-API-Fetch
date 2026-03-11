@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   outline: none;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #f4f4f0;
 }
-
 /*header*/
 .header {
   font-size: 1rem;
@@ -22,7 +19,6 @@ body {
   letter-spacing: 0.2em;
   color: #1a1a1a;
 }
-
 /*navbar*/
 .navbar {
   display: flex;
@@ -33,7 +29,6 @@ body {
   padding: 1rem 1.5rem;
   border-bottom: 2px solid #e0e0d8;
 }
-
 .navbar h1 {
   font-size: 1rem;
   font-weight: 800;
@@ -41,35 +36,30 @@ body {
   text-transform: uppercase;
   color: #1a1a1a;
 }
-
 .navbar h2 {
   font-size: 1rem;
   font-weight: 500;
   color: #4a4a4a;
   letter-spacing: 0.05em;
 }
-
 /* Add button */
 .add-button {
   max-width: 1440px;
   margin: auto;
   margin-top: 2rem;
 }
-
 /*main section*/
 main {
   max-width: 1440px;
   margin: auto;
   padding: 2.5rem 0;
 }
-
 /*cards section*/
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
 /*card*/
 .cards-container .card {
   width: 100%;
@@ -78,8 +68,9 @@ main {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
 }
-
 /*card image*/
 .cards-container .card img {
   width: 100%;
@@ -87,12 +78,20 @@ main {
   padding: 1rem;
   object-fit: cover;
 }
-
 /*card body*/
 .card-body {
   padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-
+/* card title */
+.card-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
 .cards-container .card p {
   font-size: 0.9rem;
   font-weight: 500;
@@ -100,21 +99,19 @@ main {
   line-height: 1.5;
   margin-bottom: 1.1rem;
 }
-
 /*product details*/
 .cards-container .product-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
-
 .cards-container .product-details p {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 800;
   color: #1a1a1a;
 }
-
 .cards-container .product-details button,
 .add-button button {
   font-family: "Montserrat", sans-serif;
@@ -132,34 +129,27 @@ main {
     background 0.2s ease,
     transform 0.15s ease;
 }
-
 .cards-container .product-details button:hover {
   background: #5de0a8;
 }
-
 .cards-container .product-details .delete-btn {
   background: #ff6b6b;
   color: white;
   margin-left: 0.5rem;
 }
-
 .cards-container .product-details .delete-btn:hover {
   background: #e55a5a;
 }
-
 /* footer */
-
 .footer {
   background-color: #1a1a1a;
   padding: 2.5rem 1.5rem;
   margin-top: 3rem;
 }
-
 .footer-inner {
   max-width: 1440px;
   margin: auto;
 }
-
 .footer-title {
   font-size: 0.75rem;
   font-weight: 700;
@@ -168,31 +158,26 @@ main {
   color: #83eebc;
   margin-bottom: 1.5rem;
 }
-
 .contributors {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
-
 .contributor {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-
 .contributor-name {
   font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
 }
-
 .social-links {
   display: flex;
   gap: 0.75rem;
 }
-
 .social-links a {
   font-size: 0.78rem;
   font-weight: 600;
@@ -201,7 +186,6 @@ main {
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .social-links a:hover {
   color: #83eebc;
 }
