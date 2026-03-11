@@ -1,24 +1,17 @@
 const cardsContainer = document.querySelector(".cards-container");
 
-// Fetch the data from the products.json file (acts as our API)
-fetch("http://localhost:3000/products")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((products) => {
-    // Clear the existing hardcoded HTML inside the container
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "http://localhost:3000/products", true);
+
+xhr.onload = function () {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    const products = JSON.parse(xhr.responseText);
     cardsContainer.innerHTML = "";
 
-    // Loop over the array of product objects and render them
     products.forEach((product) => {
-      // Create the card element
       const card = document.createElement("div");
       card.classList.add("card");
 
-      // Set the inner HTML based on the product data properties
       card.innerHTML = `
           <img src="${product.image}" alt="${product.name}" />
           <div class="card-body">
@@ -34,32 +27,40 @@ fetch("http://localhost:3000/products")
           </div>
         `;
 
-      // Append the new card to the container
       cardsContainer.appendChild(card);
     });
-  })
-  .catch((error) => {
-    console.error("Error fetching product data:", error);
-    cardsContainer.innerHTML = `<p>Error loading products. Please make sure you are serving this file via a web server (e.g. Live Server), as fetch cannot load local files directly via the file:// protocol.</p>`;
-  });
+  } else {
+    throw new Error(`HTTP error! status: ${xhr.status}`);
+  }
+};
 
-// Function to handle product deletion
+xhr.onerror = function () {
+  console.error("Error fetching product data:", xhr.statusText);
+  cardsContainer.innerHTML = `<p>Error loading products. Please make sure you are serving this file via a web server (e.g. Live Server), as fetch cannot load local files directly via the file:// protocol.</p>`;
+};
+
+xhr.send();
+
+
 window.deleteProduct = function (id) {
   if (confirm("Are you sure you want to delete this product?")) {
-    fetch(`http://localhost:3000/products/${id}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert("Product deleted!");
-          window.location.reload(); // Refresh the page to show updated list
-        } else {
-          alert("Failed to delete product.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting product:", error);
-        alert("Error deleting product.");
-      });
+    const deleteXhr = new XMLHttpRequest();
+    deleteXhr.open("DELETE", `http://localhost:3000/products/${id}`, true);
+
+    deleteXhr.onload = function () {
+      if (deleteXhr.status >= 200 && deleteXhr.status < 300) {
+        alert("Product deleted!");
+        window.location.reload();
+      } else {
+        alert("Failed to delete product.");
+      }
+    };
+
+    deleteXhr.onerror = function () {
+      console.error("Error deleting product:", deleteXhr.statusText);
+      alert("Error deleting product.");
+    };
+
+    deleteXhr.send();
   }
 };

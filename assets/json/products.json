@@ -34,13 +34,6 @@
       "description": "A beautiful centerpiece coffee table with a rustic finish.",
       "price": 120,
       "image": "./assets/images/couch.jpg"
-    },
-    {
-      "name": "Mouse",
-      "price": "15",
-      "image": "https://picsum.photos/200",
-      "description": "gaming mouse",
-      "id": 6
     }
   ]
 }

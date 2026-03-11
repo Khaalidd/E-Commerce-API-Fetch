@@ -24,6 +24,7 @@ input, textarea{
 button{
     width: 100%;
     padding: 10px;
+    margin: 0 auto;
     background: #83eebc;
     color: #1a1a1a;
     font-weight: 700;
