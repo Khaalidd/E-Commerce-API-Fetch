@@ -128,7 +128,14 @@ main{
 .img-gallery img:hover {
     transform: scale(1.03);
     transition: all 0.5s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.img-gallery img.active-thumb {
+    outline: 3px solid #83eebc;
+    outline-offset: 2px;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(131, 238, 188, 0.45);
 }
 
 .info-card {

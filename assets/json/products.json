@@ -2,31 +2,47 @@
   "products": [
     {
       "id": 1,
-      "name": "Modern Couch",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "price": 100,
-      "image": "./assets/images/couch.jpg"
+      "name": "Modern Sectional Sofa",
+      "description": "Transform your living room with this luxurious L-shaped sectional sofa. Upholstered in premium fabric with high-density foam cushions for lasting comfort. Features a chaise lounge and USB charging ports built into the armrest.",
+      "price": 1299.99,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80"
+      ]
     },
     {
       "id": 2,
-      "name": "Micophone Stand",
-      "description": "A microphone stand",
-      "price": 30,
-      "image": "./assets/images/couch.jpg"
+      "name": "Professional Microphone Stand",
+      "description": "Heavy-duty boom arm microphone stand built for studio and live performance. Adjustable height from 35\" to 65\", aircraft-grade aluminum construction, anti-vibration base, and universal mic clip included.",
+      "price": 49.95,
+      "images": [
+        "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=600&q=80",
+        "https://images.unsplash.com/photo-1520170350707-b2da59970118?w=600&q=80",
+        "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600&q=80"
+      ]
     },
     {
       "id": 3,
-      "name": "Ergonomic Office Chair",
-      "description": "Supportive office chair designed for long hours of work.",
-      "price": 150,
-      "image": "./assets/images/couch.jpg"
+      "name": "Ergonomic Mesh Office Chair",
+      "description": "Engineered for all-day comfort, this award-winning ergonomic chair features a breathable mesh backrest, 6-way adjustable lumbar support, 4D armrests, and a synchronized tilt mechanism. Certified for 8+ hours of use.",
+      "price": 389.0,
+      "images": [
+        "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80",
+        "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=600&q=80",
+        "https://images.unsplash.com/photo-1541558869434-2840d308329a?w=600&q=80"
+      ]
     },
     {
       "id": 4,
-      "name": "Wooden Coffee Table",
-      "description": "A beautiful centerpiece coffee table with a rustic finish.",
-      "price": 120,
-      "image": "./assets/images/couch.jpg"
+      "name": "Solid Oak Coffee Table",
+      "description": "Handcrafted from sustainably sourced solid oak with a natural walnut finish. Features a lower storage shelf and hairpin legs for a mid-century modern aesthetic. Each piece is uniquely grained \u2014 no two tables are the same.",
+      "price": 249.0,
+      "images": [
+        "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80",
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+        "https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?w=600&q=80"
+      ]
     },
     {
       "id": 5,
