@@ -1,6 +1,6 @@
 const cardsContainer = document.querySelector(".cards-container");
 
-// Fetch the data from the products.json file (acts as our API)
+
 fetch("http://localhost:3000/products")
   .then((response) => {
     if (!response.ok) {
@@ -9,17 +9,15 @@ fetch("http://localhost:3000/products")
     return response.json();
   })
   .then((products) => {
-    // Clear the existing hardcoded HTML inside the container
+
     cardsContainer.innerHTML = "";
 
-    // Loop over the array of product objects and render them
+
     products.forEach((product) => {
-      // Create the card element
+
       const card = document.createElement("div");
       card.classList.add("card");
 
-      // Set the inner HTML based on the product data properties
-      // Use the first image in the array as the thumbnail
       const thumbnail = Array.isArray(product.images) ? product.images[0] : product.image;
 
       card.innerHTML = `

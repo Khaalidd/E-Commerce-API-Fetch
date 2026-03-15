@@ -10,7 +10,7 @@ xhr.onload = () => {
     document.getElementById("price").textContent = "$" + product.price;
     document.getElementById("desc-text").textContent = product.description;
 
-    // Support both old `image` (string) and new `images` (array)
+
     const images = Array.isArray(product.images)
       ? product.images
       : [product.image];
