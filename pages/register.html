@@ -8,11 +8,11 @@
   </head>
   <body class="d-flex justify-content-center align-items-center vh-100">
     <div
-      class="container border border-secondary rounded p-3 col-11 col-md-8 col-lg-6 shadow"
+      class="container border border-secondary rounded p-3 col-11 col-md-8 col-lg-6 shadow position-relative"
     >
       <h1 class="text-center mb-5 mt-3">Registeration</h1>
 
-      <form action="/login.html" method="POST">
+      <form>
         <div class="row">
           <div class="mb-3 col-lg-6">
             <label for="username" class="form-label">Username</label>
@@ -69,6 +69,19 @@
               Register
             </button>
           </div>
+          <div
+            id="successDiv"
+            class="top-100 alert alert-success col-11 col-lg-6 mx-auto d-none"
+          >
+            <h3 class="text-center">Account Made successfully</h3>
+          </div>
+
+          <div
+            id="errorDiv"
+            class="top-100 alert alert-danger col-11 col-lg-6 mx-auto d-none"
+          >
+            <h3 class="text-center fs-5">All fields must be valid before you can register.</h3>
+          </div>
         </div>
       </form>
       <hr />
@@ -83,6 +96,6 @@
     </div>
 
     <script src="/js/bootstrap.bundle.js"></script>
-    <script defer src="/js/register.js"></script>
+    <script src="/js/register.js"></script>
   </body>
 </html>

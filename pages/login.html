@@ -10,16 +10,16 @@
     <div
       class="container border border-secondary rounded p-3 col-11 col-md-8 col-lg-6 shadow"
     >
-      <h1 class="text-center mb-5 mt-3">Registeration</h1>
+      <h1 class="text-center mb-5 mt-3">Login</h1>
 
-      <form action="/index.html" method="get">
+      <form>
         <div class="row">
           <div class="mb-3 col-lg-6">
             <label for="username" class="form-label">Username or Email</label>
             <input
               type="text"
               name="username"
-              id="username"
+              id="usernameOrEmail"
               class="form-control"
             />
           </div>
@@ -35,7 +35,6 @@
             />
           </div>
 
-
           <div class="mb-5 mt-3 text-center">
             <button
               id="loginBtn"
@@ -45,20 +44,35 @@
               Login
             </button>
           </div>
+          <div
+            id="successDiv"
+            class="top-100 alert alert-success col-11 col-lg-6 mx-auto d-none"
+          >
+            <h3 class="text-center">Login Successful.</h3>
+          </div>
+
+          <div
+            id="errorDiv"
+            class="top-100 alert alert-danger col-11 col-lg-6 mx-auto d-none"
+          >
+            <h3 class="text-center fs-4">
+              Account Not Found.
+            </h3>
+          </div>
         </div>
       </form>
       <hr />
       <p class="fw-medium">
-        Already Have An Account?
+        Don't Have an Account?
         <a
           href="/pages/register.html"
           class="text-decoration-underline text-success fw-bold"
-          >Login</a
+          >Register</a
         >
       </p>
     </div>
 
     <script src="/js/bootstrap.bundle.js"></script>
-    <script defer src="/js/login.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>
