@@ -1,7 +1,7 @@
 const usernameInput = document.getElementById("username");
 const emailInput = document.getElementById("email");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirmPassword");
 
 function inputValidation(input, pattern) {
   if (pattern.test(input.value)) {
@@ -23,8 +23,20 @@ emailInput.addEventListener("input", () => {
   inputValidation(emailInput, email_pattern);
 });
 
-password,addEventListener("input", () => {
-    
+passwordInput.addEventListener("input", () => {
+  const password_pattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  inputValidation(passwordInput, password_pattern);
 });
 
-
+confirmPasswordInput.addEventListener("input", () => {
+  const confirmPassword_pattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (confirmPasswordInput.value == passwordInput.value && confirmPassword_pattern.test(confirmPasswordInput.value)) {
+    confirmPasswordInput.classList.remove("is-invalid");
+    confirmPasswordInput.classList.add("is-valid");
+  } else {
+    confirmPasswordInput.classList.remove("is-valid");
+    confirmPasswordInput.classList.add("is-invalid");
+  }
+});
