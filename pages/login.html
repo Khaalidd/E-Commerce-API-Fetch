@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <title>Login Page</title>
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100">
+    <div
+      class="container border border-secondary rounded p-3 col-11 col-md-8 col-lg-6 shadow"
+    >
+      <h1 class="text-center mb-5 mt-3">Registeration</h1>
+
+      <form action="/index.html" method="get">
+        <div class="row">
+          <div class="mb-3 col-lg-6">
+            <label for="username" class="form-label">Username or Email</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3 col-lg-6">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              placeholder="Enter your password"
+            />
+          </div>
+
+
+          <div class="mb-5 mt-3 text-center">
+            <button
+              id="loginBtn"
+              type="submit"
+              class="btn btn-success col-12 col-lg-12"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <p class="fw-medium">
+        Already Have An Account?
+        <a
+          href="/pages/register.html"
+          class="text-decoration-underline text-success fw-bold"
+          >Login</a
+        >
+      </p>
+    </div>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script defer src="/js/login.js"></script>
+  </body>
+</html>
