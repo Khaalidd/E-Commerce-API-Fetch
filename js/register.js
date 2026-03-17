@@ -62,6 +62,7 @@ registerForm.addEventListener("submit", (e) => {
         username: usernameInput.value,
         email: emailInput.value,
         password: passwordInput.value,
+        logged: "false",
     }));
 
     successDiv.classList.remove("d-none");
