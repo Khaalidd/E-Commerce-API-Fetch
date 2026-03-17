@@ -26,6 +26,9 @@ loginForm.addEventListener("submit", (e) => {
     setTimeout(() => {
       window.location.href = "/index.html";
     }, 1400);
+
+    user.logged = "true";
+    localStorage.setItem("user", JSON.stringify(user));
   } else {
     errorDiv.classList.remove("d-none");
   }

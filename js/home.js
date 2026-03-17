@@ -1,11 +1,24 @@
-//logout
-btn.addEventListener('click',()=>{
-    localStorage.clear();
-
-   window.location.href='./pages/login.html';
-  })
-
 const cardsContainer = document.querySelector(".cards-container");
+const loginOrRegisterDiv = document.getElementById("login_registerDiv");
+const navbarUserInfo = document.getElementById("user_infoDiv");
+const username = document.getElementById("nav_username");
+const logout = document.getElementById("logout");
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if(user.logged === "true") {
+  loginOrRegisterDiv.classList.add("d-none");
+  navbarUserInfo.classList.remove("d-none");
+} else{
+    loginOrRegisterDiv.classList.remove("d-none");
+  navbarUserInfo.classList.add("d-none");
+}
+
+logout.addEventListener(("click"), () => {
+  user.logged = "false";
+  localStorage.setItem("user", JSON.stringify(user));
+  window.location.reload();
+});
 
 fetch("http://localhost:3000/products")
   .then((response) => {
@@ -60,7 +73,7 @@ window.deleteProduct = function (id) {
       .then((response) => {
         if (response.ok) {
           alert("Product deleted!");
-          window.location.reload(); // Refresh the page to show updated list
+          window.location.reload();
         } else {
           alert("Failed to delete product.");
         }
