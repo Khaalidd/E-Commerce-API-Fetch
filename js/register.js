@@ -69,7 +69,7 @@ registerForm.addEventListener("submit", (e) => {
 
     setTimeout(() => {
         window.location.href = "/pages/login.html";
-    }, 1400);
+    }, 1500);
   } else {
     errorDiv.classList.remove("d-none");
   }

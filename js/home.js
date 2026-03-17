@@ -9,6 +9,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 if (user.logged === "true") {
   loginOrRegisterDiv.classList.add("d-none");
   navbarUserInfo.classList.remove("d-none");
+  username.innerText = user.username;
 } else {
   loginOrRegisterDiv.classList.remove("d-none");
   navbarUserInfo.classList.add("d-none");
