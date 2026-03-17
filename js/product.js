@@ -10,6 +10,9 @@ xhr.onload = () => {
     document.getElementById("price").textContent = "$" + product.price;
     document.getElementById("desc-text").textContent = product.description;
 
+document.getElementById("cart_button").onclick = function () {
+    addToCart(id);
+};
 
     const images = Array.isArray(product.images)
       ? product.images
@@ -23,7 +26,7 @@ xhr.onload = () => {
 
     const mainImg = document.getElementById("main-img");
     const gallery = document.querySelector(".img-gallery");
-
+ 
     // Set main image to the first photo
     mainImg.src = resolveUrl(images[0]);
     mainImg.alt = product.name;
