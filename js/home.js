@@ -1,5 +1,11 @@
-const cardsContainer = document.querySelector(".cards-container");
+//logout
+btn.addEventListener('click',()=>{
+    localStorage.clear();
 
+   window.location.href='./pages/login.html';
+  })
+
+const cardsContainer = document.querySelector(".cards-container");
 
 fetch("http://localhost:3000/products")
   .then((response) => {
@@ -30,6 +36,7 @@ fetch("http://localhost:3000/products")
               <div>
                 <a href="pages/product.html?id=${product.id}"><button>Details</button></a>
                 <button class="delete-btn" onclick="deleteProduct(${product.id})">Delete</button>
+                <button class="cart"  onclick="addToCart(${product.id})">Add To Cart</button>
               </div>
             </div>
           </div>
