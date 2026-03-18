@@ -73,9 +73,10 @@ body {
   align-items: center;           
   padding: 10px 20px;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 5px;
+  right: 5px;
   background-color: #83eebc;
+  border-radius: 8px;
 }
 
 .total-box {
