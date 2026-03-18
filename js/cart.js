@@ -78,6 +78,7 @@ function updateTotal() {
     }
 
     totalcontainer.textContent = "$" + total.toFixed(2);
+    localStorage.setItem("cartTotal", total.toFixed(2));
 }
 
 renderCart();
