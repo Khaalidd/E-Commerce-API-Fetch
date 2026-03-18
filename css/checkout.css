@@ -1,0 +1,23 @@
+body {
+  padding-bottom: 80px;
+}
+
+main {
+  margin-top: 60px;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 72px;
+}
+
+.place-order-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #dee2e6;
+  z-index: 100;
+}
