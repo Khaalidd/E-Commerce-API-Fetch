@@ -95,6 +95,7 @@
                       class="form-check-input"
                       type="radio"
                       name="shipping"
+                      value="standard"
                       checked
                     />
                     <div>
@@ -113,6 +114,7 @@
                       class="form-check-input"
                       type="radio"
                       name="shipping"
+                      value="express"
                     />
                     <div>
                       <div class="fw-semibold">Express Delivery</div>
@@ -130,6 +132,7 @@
                       class="form-check-input"
                       type="radio"
                       name="shipping"
+                      value="overnight"
                     />
                     <div>
                       <div class="fw-semibold">Overnight Delivery</div>
@@ -212,55 +215,39 @@
               <div class="card-body">
                 <h6 class="fw-bold mb-3">🧾 Order Summary</h6>
 
-                <ul class="list-group list-group-flush mb-3">
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between"
-                  >
-                    <span class="text-muted"
-                      >Wireless Headphones
-                      <span class="badge bg-secondary">×1</span></span
-                    >
-                    <span>$49.99</span>
-                  </li>
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between"
-                  >
-                    <span class="text-muted"
-                      >Phone Case
-                      <span class="badge bg-secondary">×2</span></span
-                    >
-                    <span>$19.98</span>
-                  </li>
-                  <li
-                    class="list-group-item px-0 d-flex justify-content-between"
-                  >
-                    <span class="text-muted"
-                      >USB-C Cable
-                      <span class="badge bg-secondary">×1</span></span
-                    >
-                    <span>$12.99</span>
-                  </li>
+                <ul class="list-group list-group-flush mb-3" id="order-items">
+                  <!-- dynamic from localStorage -->
                 </ul>
 
                 <div class="d-flex justify-content-between mb-1">
                   <span class="text-muted">Subtotal</span>
-                  <span>$82.96</span>
+                  <span id="order-subtotal">$0.00</span>
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span class="text-muted">Shipping</span>
-                  <span class="text-success fw-semibold">Free</span>
+                  <span id="order-shipping" class="text-success fw-semibold"
+                    >Free</span
+                  >
                 </div>
                 <hr class="my-2" />
                 <div class="d-flex justify-content-between fw-bold fs-6">
                   <span>Total</span>
-                  <span>$82.96</span>
+                  <span id="order-total">$0.00</span>
                 </div>
               </div>
             </div>
 
             <!-- PLACE ORDER — inline on desktop, sticky bar on mobile -->
+            <!-- success toast: shows BELOW button on desktop -->
+            <div
+              id="order-success-toast"
+              class="order-success-toast alert alert-success border border-success-subtle d-flex align-items-center fw-semibold mb-2 py-2"
+            >
+              ✅ Your order has been placed successfully!
+            </div>
             <button
-              class="btn btn-success w-100 py-3 fw-semibold fs-6 d-none d-lg-block"
+              id="place-order-desktop"
+              class="btn btn-success w-100 py-3 fw-semibold fs-6 d-none d-lg-block place-order-btn"
             >
               Place Order
             </button>
@@ -271,8 +258,13 @@
     </main>
 
     <!-- mobile only -->
-    <div class="place-order-bar d-lg-none">
-      <button class="btn btn-success w-100 py-3 fw-semibold fs-6">
+    <div
+      class="d-lg-none position-fixed bottom-0 start-0 end-0 p-3 bg-white border-top"
+    >
+      <button
+        id="place-order-mobile"
+        class="btn btn-success w-100 py-3 fw-semibold fs-6 place-order-btn"
+      >
         Place Order
       </button>
     </div>
