@@ -54,7 +54,7 @@ xhr.onload = () => {
     descChecker();
 
     const addBtn = document.querySelector(".cart");
-
+    const addAlert = document.getElementById("add-alert");
     addBtn.addEventListener("click", () => {
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -76,7 +76,11 @@ xhr.onload = () => {
 
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      alert("Added to cart!");
+        addAlert.classList.remove("d-none");
+
+        setTimeout(() => {
+          addAlert.classList.add("d-none");
+        }, 1000);
     });
   }
 };

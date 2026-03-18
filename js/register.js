@@ -57,18 +57,20 @@ registerForm.addEventListener("submit", (e) => {
   ].every((input) => input.classList.contains("is-valid"));
 
   if (ifAllValid) {
+    
     errorDiv.classList.add("d-none");
     localStorage.setItem("user", JSON.stringify({
         username: usernameInput.value,
         email: emailInput.value,
         password: passwordInput.value,
+        logged: "false",
     }));
 
     successDiv.classList.remove("d-none");
 
     setTimeout(() => {
         window.location.href = "/pages/login.html";
-    }, 1400);
+    }, 1500);
   } else {
     errorDiv.classList.remove("d-none");
   }

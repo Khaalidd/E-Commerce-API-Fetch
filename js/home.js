@@ -1,5 +1,25 @@
 const cardsContainer = document.querySelector(".cards-container");
+const loginOrRegisterDiv = document.getElementById("login_registerDiv");
+const navbarUserInfo = document.getElementById("user_infoDiv");
+const username = document.getElementById("nav_username");
+const logout = document.getElementById("logout");
 
+const user = JSON.parse(localStorage.getItem("user") || "null");
+
+if (user && user.logged === "true") {
+  loginOrRegisterDiv.classList.add("d-none");
+  navbarUserInfo.classList.remove("d-none");
+  username.innerText = user.username;
+} else {
+  loginOrRegisterDiv.classList.remove("d-none");
+  navbarUserInfo.classList.add("d-none");
+}
+
+logout.addEventListener("click", () => {
+  user.logged = "false";
+  localStorage.setItem("user", JSON.stringify(user));
+  window.location.reload();
+});
 
 fetch("http://localhost:3000/products")
   .then((response) => {
@@ -9,16 +29,15 @@ fetch("http://localhost:3000/products")
     return response.json();
   })
   .then((products) => {
-
     cardsContainer.innerHTML = "";
 
-
     products.forEach((product) => {
-
       const card = document.createElement("div");
       card.classList.add("card");
 
-      const thumbnail = Array.isArray(product.images) ? product.images[0] : product.image;
+      const thumbnail = Array.isArray(product.images)
+        ? product.images[0]
+        : product.image;
 
       card.innerHTML = `
           <img src="${thumbnail}" alt="${product.name}" />

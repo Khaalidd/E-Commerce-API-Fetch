@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details</title>
     <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
   </head>
   <body>
-    <header class="header">
-      <h1>TASK 5</h1>
-    </header>
 
-    <nav class="navbar">
-      <h1>CAI4_SWD2_S5</h1>
-      <h2>E-Commerce API Fetch</h2>
+
+<nav class="navbar mt-2">
+      <h1 class="m-0"><a href="/index.html" class="text-decoration-none text-black">E-Commerce</a></h1>
+      <div id="login_registerDiv">
+        <a class="btn btn-success me-2" href="/pages/login.html">Login</a>
+        <a id="logout-btn" class="btn btn-success" href="/pages/register.html">Register</a>
+      </div>
+
+      <div id="user_infoDiv" class="d-flex gap-3 align-items-center d-none">
+        <h3 id="nav_username" class="m-0 fs-3">Khaled</h3>
+        <a id="logout" href="#" class="btn btn-danger">Logout</a>
+      </div>
     </nav>
     <div class="page-top">
       <div class="back-button">
@@ -56,6 +63,10 @@
             <button class="cart">Add To Cart</button>
             <button class="buy">Buy Now</button>
           </div>
+
+          <div class="alert alert-success d-none" id="add-alert">
+            <p class="text-center m-0">Item has been added to cart</p>
+          </div>
         </div>
       </div>
     </main>
@@ -80,6 +91,7 @@
       </div>
     </footer>
 
+    <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/product.js"></script>
   </body>
 </html>
