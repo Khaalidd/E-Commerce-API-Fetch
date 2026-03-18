@@ -62,14 +62,13 @@ registerForm.addEventListener("submit", (e) => {
         username: usernameInput.value,
         email: emailInput.value,
         password: passwordInput.value,
-        logged: "false",
     }));
 
     successDiv.classList.remove("d-none");
 
     setTimeout(() => {
         window.location.href = "/pages/login.html";
-    }, 1500);
+    }, 1400);
   } else {
     errorDiv.classList.remove("d-none");
   }

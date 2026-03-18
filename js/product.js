@@ -10,9 +10,6 @@ xhr.onload = () => {
     document.getElementById("price").textContent = "$" + product.price;
     document.getElementById("desc-text").textContent = product.description;
 
-document.getElementById("cart_button").onclick = function () {
-    addToCart(id);
-};
 
     const images = Array.isArray(product.images)
       ? product.images
@@ -26,7 +23,7 @@ document.getElementById("cart_button").onclick = function () {
 
     const mainImg = document.getElementById("main-img");
     const gallery = document.querySelector(".img-gallery");
- 
+
     // Set main image to the first photo
     mainImg.src = resolveUrl(images[0]);
     mainImg.alt = product.name;
@@ -55,6 +52,32 @@ document.getElementById("cart_button").onclick = function () {
 
     // Run the see-more/less check after text is filled in
     descChecker();
+
+    const addBtn = document.querySelector(".cart");
+
+    addBtn.addEventListener("click", () => {
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const existing = cart.find(p => p.id === product.id);
+
+      if (existing) {
+        existing.quantity++;
+      } 
+      else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: resolveUrl(images[0]),
+          quantity: 1
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      alert("Added to cart!");
+    });
   }
 };
 

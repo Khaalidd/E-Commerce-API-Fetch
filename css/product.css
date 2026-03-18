@@ -48,6 +48,14 @@ body{
     color: #4a4a4a;
     letter-spacing: 0.05em;
 }
+.page-top {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;                
+  justify-content: space-between; 
+  align-items: center;           
+  padding: 10px 20px;
+}
 
 .back-button button{
     max-width: 1440px;
@@ -68,6 +76,13 @@ body{
     transform: scale(1.03);
     transition: all 0.5s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cart-button img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 main{
