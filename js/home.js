@@ -1,25 +1,5 @@
 const cardsContainer = document.querySelector(".cards-container");
-const loginOrRegisterDiv = document.getElementById("login_registerDiv");
-const navbarUserInfo = document.getElementById("user_infoDiv");
-const username = document.getElementById("nav_username");
-const logout = document.getElementById("logout");
 
-const user = JSON.parse(localStorage.getItem("user"));
-
-if (user.logged === "true") {
-  loginOrRegisterDiv.classList.add("d-none");
-  navbarUserInfo.classList.remove("d-none");
-  username.innerText = user.username;
-} else {
-  loginOrRegisterDiv.classList.remove("d-none");
-  navbarUserInfo.classList.add("d-none");
-}
-
-logout.addEventListener("click", () => {
-  user.logged = "false";
-  localStorage.setItem("user", JSON.stringify(user));
-  window.location.reload();
-});
 
 fetch("http://localhost:3000/products")
   .then((response) => {
@@ -29,15 +9,16 @@ fetch("http://localhost:3000/products")
     return response.json();
   })
   .then((products) => {
+
     cardsContainer.innerHTML = "";
 
+
     products.forEach((product) => {
+
       const card = document.createElement("div");
       card.classList.add("card");
 
-      const thumbnail = Array.isArray(product.images)
-        ? product.images[0]
-        : product.image;
+      const thumbnail = Array.isArray(product.images) ? product.images[0] : product.image;
 
       card.innerHTML = `
           <img src="${thumbnail}" alt="${product.name}" />
@@ -46,10 +27,10 @@ fetch("http://localhost:3000/products")
             <p>${product.description}</p>
             <div class="product-details">
               <p>$${product.price}</p>
-            <div class="card-actions">
-              <a href="pages/product.html?id=${product.id}"><button>Details</button></a>
-              <button class="cart" onclick="addToCart(${product.id})">Add To Cart</button>
-            </div>
+              <div>
+                <a href="pages/product.html?id=${product.id}"><button>Details</button></a>
+                <button class="delete-btn" onclick="deleteProduct(${product.id})">Delete</button>
+              </div>
             </div>
           </div>
         `;
@@ -72,7 +53,7 @@ window.deleteProduct = function (id) {
       .then((response) => {
         if (response.ok) {
           alert("Product deleted!");
-          window.location.reload();
+          window.location.reload(); // Refresh the page to show updated list
         } else {
           alert("Failed to delete product.");
         }
